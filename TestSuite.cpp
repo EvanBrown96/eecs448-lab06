@@ -40,16 +40,16 @@ void TestSuite::allTests(){
 
   std::cout << "Beginning Test Suite...\n";
 
-  // testConstructor();
-  // testDestructor();
-  // testIsEmpty();
-  // testSize();
-  // testAddBack();
-  // testAddFront();
-  // testRemoveBack();
-  // testRemoveFront();
-  // testSearch();
-  // testRandom();
+  testConstructor();
+  testDestructor();
+  testIsEmpty();
+  testSize();
+  testAddBack();
+  testAddFront();
+  testRemoveBack();
+  testRemoveFront();
+  testSearch();
+  testRandom();
 
   std::cout << "Test Suite Complete.\n";
   std::cout << "Test Battery: " + std::to_string(battery_passes) + "/32 PASSED\n";
