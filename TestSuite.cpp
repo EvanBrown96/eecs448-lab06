@@ -2,25 +2,15 @@
 #include <iostream>
 #include <stdexcept>
 #include "TestSuite.h"
+#include <stdlib.h>
 
 
 
-TestSuite::TestSuite(){}
+TestSuite::TestSuite(){
 
+  srand(1298); // initialize random with seed
 
-
-void TestSuite::allTests(){
-  std::cout << "Beginning Test Suite...\n";
-  std::cout << "Test Suite Complete.";
 }
-
-#include "LinkedListOfInts.h"
-#include <iostream>
-#include "TestSuite.h"
-
-
-
-TestSuite::TestSuite(){}
 
 
 
@@ -44,7 +34,15 @@ void TestSuite::testExcept(std::exception e){
 void TestSuite::allTests(){
   std::cout << "Beginning Test Suite...\n";
 
-
+  testConstructor();
+  testDestructor();
+  testIsEmpty();
+  testSize();
+  testAddBack();
+  testAddFront();
+  testRemoveBack();
+  testRemoveFront();
+  testSearch();
 
   std::cout << "Test Suite Complete.";
 }
@@ -56,7 +54,7 @@ void TestSuite::testConstructor(){
   try{
     LinkedListOfInts list;
 
-    test(list.toVector().size() == 0);
+    test(list.toVector().empty());
   }
   catch(std::exception e){
     testExcept(e);
@@ -119,7 +117,7 @@ void TestSuite::testSize(){
   try{
     LinkedListOfInts list;
 
-    test(LinkedList.size() == 0);
+    test(list.toVector().empty());
   }
   catch(std::exception e){
     testExcept(e);
@@ -441,7 +439,7 @@ void TestSuite::testRemoveBack(){
 
     list.removeBack();
 
-    test(list.toVector().size() == 0);
+    test(list.toVector().empty());
   }
   catch(std::exception e){
     testExcept(e);
@@ -469,7 +467,7 @@ void TestSuite::testRemoveBack(){
 
     list.removeBack();
 
-    test(list.toVector().size() == 0);
+    test(list.toVector().empty());
   }
   catch(std::exception e){
     testExcept(e);
@@ -537,7 +535,7 @@ void TestSuite::testRemoveFront(){
 
     list.removeFront();
 
-    test(list.toVector().size() == 0);
+    test(list.toVector().empty());
   }
   catch(std::exception e){
     testExcept(e);
@@ -565,7 +563,7 @@ void TestSuite::testRemoveFront(){
 
     list.removeFront();
 
-    test(list.toVector().size() == 0);
+    test(list.toVector().empty());
   }
   catch(std::exception e){
     testExcept(e);
@@ -613,119 +611,61 @@ void TestSuite::testRemoveFront(){
 }
 
 
-void TestSuite::testConstructor(){
-  std::cout << "Test 1: Empty list has size 0: ";
-  try{
-    LinkedListOfInts list;
-    std::vector<int> contents = list.toVector();
+void TestSuite::TestRandom(){
 
-    if(contents.size() == 0){
-      std::cout << "PASSED\n";
-    }
-    else{
-      std::cout << "FAILED\n";
-    }
-  }
-  catch(std::exception e){
-    std::cout << "FAILED (exception: " + e.what() + ")\n";
-  }
-}
+  std::cout << "Running RANDOM test.\n";
+  std::vector<int> sim;
+  LinkedListOfInts list;
+  std::vector<int> contents;
+  bool error = false;
 
-
-
-void TestSuite::testDestructor(){
-
-}
-
-
-
-void TestSuite::testIsEmpty(){
-  std::cout << "Test 3: isEmpty returns true for new list: ";
-  try{
-    LinkedListOfInts list;
-
-    if(LinkedList.isEmpty()){
-      std::cout << "PASSED\n";
-    }
-    else{
-      std::cout << "FAILED\n";
-    }
-  }
-  catch(std::exception e){
-    std::cout << "FAILED (exception: " + e.what() + ")\n";
-  }
-
-
-  std::cout << "Test 4: isEmpty returns false for list with one element: ";
-  try{
-    LinkedListOfInts list;
-    list.addFront(5);
-
-    if(!LinkedList.isEmpty()){
-      std::cout << "PASSED\n";
-    }
-    else{
-      std::cout << "FAILED\n";
-    }
-  }
-  catch(std::exception e){
-    std::cout << "FAILED (exception: " + e.what() + ")\n";
-  }
-
-
-  std::cout << "Test 5: isEmpty returns false for list with many elements (10): ";
-  try{
-    LinkedListOfInts list;
-
-    for(int i = 0; i < 10; i++){
-      list.addFront(i);
+  for(int i = 0; i < 100; i++){
+    std::cout << "Operation: ";
+    int val = rand() % 1000;
+    int op = rand() % 4;
+    switch(op){
+      case 0:  list.addFront(val);
+               sim.insert(sim.begin(), val);
+               std::cout << "addFront\n";
+               break;
+      case 1:  list.addBack(val);
+               sim.push_back(val);
+               std::cout << "addBack\n";
+               break;
+      case 2:  list.removeFront();
+               if(!sim.empty()){
+                 sim.erase(sim.begin());
+               }
+               std::cout << "removeFront\n";
+               break;
+      default: list.removeBack();
+               if(!sim.empty()){
+                 sim.pop_back(val);
+               }
+               std::cout << "removeBack\n";
+               break;
     }
 
-    if(!LinkedList.isEmpty()){
-      std::cout << "PASSED\n";
+    contents = list.toVector();
+    error = false;
+
+    if(list.size() != contents.size()){
+      std::cout << "FAILED: size method gave wrong value (" + std::to_string(list.size()) + ", expected " + std::to_string(contents.size()) + ")\n";
+      error = true;
     }
-    else{
-      std::cout << "FAILED\n";
+    if(contents.size() != sim.size()){
+      std::cout << "FAILED: list incorrect length (" + std::to_string(contents.size()) + ", expected " + std::to_string(sim.size()) + ")\n";
+      error = true;
+    }
+    if(contents.empty() != list.isEmpty()){
+      std::cout << "FAILED: list incorrectly reported empty status\n";
+      error = true;
+    }
+
+    if(error){
+      sim = contents;
     }
   }
-  catch(std::exception e){
-    std::cout << "FAILED (exception: " + e.what() + ")\n";
-  }
 
-}
-
-
-
-void TestSuite::testSize(){
-
-}
-
-
-
-void TestSuite::testSearch(){
-
-}
-
-
-
-void TestSuite::testAddBack(){
-
-}
-
-
-
-void TestSuite::testAddFront(){
-
-}
-
-
-
-void TestSuite::testRemoveBack(){
-
-}
-
-
-
-void TestSuite::testRemoveFront(){
 
 }
