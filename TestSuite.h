@@ -68,4 +68,7 @@ private:
   // prints out a vector
   void printVector(std::vector<int> v);
 
+  int battery_passes = 0;
+  int random_passes = 200;
+
 };

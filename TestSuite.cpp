@@ -17,6 +17,7 @@ TestSuite::TestSuite(){
 void TestSuite::test(bool condition){
   if(condition){
     std::cout << "PASSED\n";
+    battery_passes++;
   }
   else{
     std::cout << "FAILED\n";
@@ -34,6 +35,10 @@ void TestSuite::testExcept(std::exception e){
 
 
 void TestSuite::allTests(){
+
+  battery_passes = 0;
+  random_passes = 200;
+
   std::cout << "Beginning Test Suite...\n";
 
   testConstructor();
@@ -47,7 +52,9 @@ void TestSuite::allTests(){
   testSearch();
   testRandom();
 
-  std::cout << "Test Suite Complete.";
+  std::cout << "Test Suite Complete.\n";
+  std::cout << "Test Battery: " + std::to_string(battery_passes) + "/32 PASSED\n";
+  std::cout << "Test RANDOM: " + std::to_string(random_passes) + "/200 PASSED\n";
 }
 
 
@@ -614,6 +621,7 @@ void TestSuite::testRemoveFront(){
 }
 
 
+
 void TestSuite::testRandom(){
 
   std::cout << "\nRunning RANDOM test.\n";
@@ -660,18 +668,22 @@ void TestSuite::testRandom(){
 
     if(contents != sim){
       std::cout << "\tFAILED: list does not have the expected contents.\n";
+      random_passes--;
       error = true;
     }
     if(list.size() != (int)contents.size()){
       std::cout << "\tFAILED: size method gave wrong value (" + std::to_string(list.size()) + ", expected " + std::to_string(contents.size()) + ")\n";
+      random_passes--;
       error = true;
     }
     if(contents.size() != sim.size()){
       std::cout << "\tFAILED: list incorrect length (" + std::to_string(contents.size()) + ", expected " + std::to_string(sim.size()) + ")\n";
+      random_passes--;
       error = true;
     }
     if(contents.empty() != list.isEmpty()){
       std::cout << "\tFAILED: list incorrectly reported empty status\n";
+      random_passes--;
       error = true;
     }
 
