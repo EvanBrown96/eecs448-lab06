@@ -65,4 +65,7 @@ private:
   // prints out the exception encountered during a test
   void testExcept(std::exception e);
 
+  // prints out a vector
+  void printVector(std::vector<int> v);
+
 };
