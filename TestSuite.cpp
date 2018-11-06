@@ -26,7 +26,9 @@ void TestSuite::test(bool condition){
 
 
 void TestSuite::testExcept(std::exception e){
-  std::cout << "FAILED (exception: " + e.what() + ")\n";
+  std::cout << "FAILED (exception: ";
+  std::cout << e.what();
+  std::cout << ")\n";
 }
 
 
@@ -641,7 +643,7 @@ void TestSuite::testRandom(){
                break;
       default: list.removeBack();
                if(!sim.empty()){
-                 sim.pop_back(val);
+                 sim.pop_back();
                }
                std::cout << "removeBack\n";
                break;
@@ -650,7 +652,7 @@ void TestSuite::testRandom(){
     contents = list.toVector();
     error = false;
 
-    if(list.size() != contents.size()){
+    if(list.size() != (int)contents.size()){
       std::cout << "FAILED: size method gave wrong value (" + std::to_string(list.size()) + ", expected " + std::to_string(contents.size()) + ")\n";
       error = true;
     }
