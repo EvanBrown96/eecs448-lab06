@@ -16,7 +16,6 @@ public:
   // 1. test if a newly created list is empty
   // 2. test if a list with one item added to it is empty
   // 3. test if a list with a number of additions is not empty [use n=10]
-  // 4. test if a list with a number of additions followed by the same number of deletions is empty [use n=10]
   void testIsEmpty();
 
   // 1. test that the size method returns 0 for a newly created list

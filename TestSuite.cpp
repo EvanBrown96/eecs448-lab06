@@ -29,7 +29,7 @@ void TestSuite::testConstructor(){
       std::cout << "FAILED\n";
     }
   }
-  catch(exception e){
+  catch(std::exception e){
     std::cout << "FAILED (exception: " + e.what() + ")\n";
   }
 }
@@ -54,7 +54,7 @@ void TestSuite::testIsEmpty(){
       std::cout << "FAILED\n";
     }
   }
-  catch(exception e){
+  catch(std::exception e){
     std::cout << "FAILED (exception: " + e.what() + ")\n";
   }
 
@@ -71,7 +71,7 @@ void TestSuite::testIsEmpty(){
       std::cout << "FAILED\n";
     }
   }
-  catch(exception e){
+  catch(std::exception e){
     std::cout << "FAILED (exception: " + e.what() + ")\n";
   }
 
@@ -91,7 +91,7 @@ void TestSuite::testIsEmpty(){
       std::cout << "FAILED\n";
     }
   }
-  catch(exception e){
+  catch(std::exception e){
     std::cout << "FAILED (exception: " + e.what() + ")\n";
   }
 
