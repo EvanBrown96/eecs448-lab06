@@ -658,6 +658,10 @@ void TestSuite::testRandom(){
 
     error = false;
 
+    if(contents != sim){
+      std::cout << "\tFAILED: list does not have the expected contents.\n";
+      error = true;
+    }
     if(list.size() != (int)contents.size()){
       std::cout << "\tFAILED: size method gave wrong value (" + std::to_string(list.size()) + ", expected " + std::to_string(contents.size()) + ")\n";
       error = true;
