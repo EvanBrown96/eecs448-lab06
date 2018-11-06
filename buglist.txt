@@ -1,2 +1,4 @@
 - isEmpty method always returns true, regardless of state of linked list.
 - addBack method actually adds the given value to the front of the linked list, not the back.
+- removeFront method always returns false and does not modify the list at all.
+- removeBack method always returns false and does not modify the list at all.

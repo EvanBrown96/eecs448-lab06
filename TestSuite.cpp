@@ -41,10 +41,10 @@ void TestSuite::allTests(){
 
   std::cout << "Beginning Test Suite...\n";
 
-  testConstructor();
-  testDestructor();
-  testIsEmpty();
-  testSize();
+  // testConstructor();
+  // testDestructor();
+  // testIsEmpty();
+  // testSize();
   // testAddBack();
   // testAddFront();
   // testRemoveBack();
