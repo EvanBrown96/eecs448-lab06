@@ -72,12 +72,6 @@ void TestSuite::testConstructor(){
 
 
 
-void TestSuite::testDestructor(){
-
-}
-
-
-
 void TestSuite::testIsEmpty(){
   std::cout << "Test 3: isEmpty returns true for new list:\t\t\t\t\t\t\t\t\t\t\t";
   try{

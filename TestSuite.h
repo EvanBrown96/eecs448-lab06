@@ -13,9 +13,6 @@ public:
   // test that the constructor creates an empty list
   void testConstructor();
 
-  // test that the destructor deletes all the nodes in the list
-  void testDestructor();
-
   // 1. test if a newly created list is empty
   // 2. test if a list with one item added to it is empty
   // 3. test if a list with many elements in it is not empty [use n=10]

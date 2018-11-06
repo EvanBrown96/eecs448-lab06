@@ -18,8 +18,3 @@ int main(int argc, char** argv)
 	return (0);
 
 }
-
-void operator delete(void* n){
-	std::cout << typeid(n).name();
-	free(n);
-}
