@@ -41,7 +41,6 @@ void TestSuite::allTests(){
   std::cout << "Beginning Test Suite...\n";
 
   testConstructor();
-  testDestructor();
   testIsEmpty();
   testSize();
   testAddBack();
@@ -52,7 +51,7 @@ void TestSuite::allTests(){
   testRandom();
 
   std::cout << "Test Suite Complete.\n";
-  std::cout << "Test Battery: " + std::to_string(battery_passes) + "/32 PASSED\n";
+  std::cout << "Test Battery: " + std::to_string(battery_passes) + "/37 PASSED\n";
   std::cout << "Test RANDOM: " + std::to_string(random_passes) + "/200 PASSED\n";
 }
 
@@ -73,7 +72,7 @@ void TestSuite::testConstructor(){
 
 
 void TestSuite::testIsEmpty(){
-  std::cout << "Test 3: isEmpty returns true for new list:\t\t\t\t\t\t\t\t\t\t\t";
+  std::cout << "Test 2: isEmpty returns true for new list:\t\t\t\t\t\t\t\t\t\t\t";
   try{
     LinkedListOfInts list;
 
@@ -84,7 +83,7 @@ void TestSuite::testIsEmpty(){
   }
 
 
-  std::cout << "Test 4: isEmpty returns false for list with one element:\t\t\t\t\t\t\t\t\t";
+  std::cout << "Test 3: isEmpty returns false for list with one element:\t\t\t\t\t\t\t\t\t";
   try{
     LinkedListOfInts list;
     list.addFront(5);
@@ -96,7 +95,7 @@ void TestSuite::testIsEmpty(){
   }
 
 
-  std::cout << "Test 5: isEmpty returns false for list with many elements (10):\t\t\t\t\t\t\t\t\t";
+  std::cout << "Test 4: isEmpty returns false for list with many elements (10):\t\t\t\t\t\t\t\t\t";
   try{
     LinkedListOfInts list;
 
@@ -116,7 +115,7 @@ void TestSuite::testIsEmpty(){
 
 void TestSuite::testSize(){
 
-  std::cout << "Test 6: size() returns 0 for an empty list:\t\t\t\t\t\t\t\t\t\t\t";
+  std::cout << "Test 5: size() returns 0 for an empty list:\t\t\t\t\t\t\t\t\t\t\t";
   try{
     LinkedListOfInts list;
 
@@ -127,7 +126,7 @@ void TestSuite::testSize(){
   }
 
 
-  std::cout << "Test 7: size() returns 1 for a list with a single element:\t\t\t\t\t\t\t\t\t";
+  std::cout << "Test 6: size() returns 1 for a list with a single element:\t\t\t\t\t\t\t\t\t";
   try{
     LinkedListOfInts list;
 
@@ -140,7 +139,7 @@ void TestSuite::testSize(){
   }
 
 
-  std::cout << "Test 8: size() returns the correct number for list with many elements (10):\t\t\t\t\t\t\t";
+  std::cout << "Test 7: size() returns the correct number for list with many elements (10):\t\t\t\t\t\t\t";
   try{
     LinkedListOfInts list;
 
@@ -160,7 +159,7 @@ void TestSuite::testSize(){
 
 void TestSuite::testSearch(){
 
-  std::cout << "Test 27: search on an empty list returns false:\t\t\t\t\t\t\t\t\t\t\t";
+  std::cout << "Test 32: search on an empty list returns false:\t\t\t\t\t\t\t\t\t\t\t";
   try{
     LinkedListOfInts list;
 
@@ -171,7 +170,7 @@ void TestSuite::testSearch(){
   }
 
 
-  std::cout << "Test 28: search on a list of length 1 returns false if the search element is not present:\t\t\t\t\t";
+  std::cout << "Test 33: search on a list of length 1 returns false if the search element is not present:\t\t\t\t\t";
   try{
     LinkedListOfInts list;
 
@@ -184,7 +183,7 @@ void TestSuite::testSearch(){
   }
 
 
-  std::cout << "Test 29: search on a list of length 1 returns true if the search element is present:\t\t\t\t\t\t";
+  std::cout << "Test 34: search on a list of length 1 returns true if the search element is present:\t\t\t\t\t\t";
   try{
     LinkedListOfInts list;
 
@@ -197,7 +196,7 @@ void TestSuite::testSearch(){
   }
 
 
-  std::cout << "Test 30: search on a list of length 10 returns false if the search element is not present:\t\t\t\t\t";
+  std::cout << "Test 35: search on a list of length 10 returns false if the search element is not present:\t\t\t\t\t";
   try{
     LinkedListOfInts list;
 
@@ -212,7 +211,7 @@ void TestSuite::testSearch(){
   }
 
 
-  std::cout << "Test 31: search on a list of length 10 returns true if the search element is present once:\t\t\t\t\t";
+  std::cout << "Test 36: search on a list of length 10 returns true if the search element is present once:\t\t\t\t\t";
   try{
     LinkedListOfInts list;
 
@@ -227,7 +226,7 @@ void TestSuite::testSearch(){
   }
 
 
-  std::cout << "Test 32: search on a list of length 10 returns true if the search element is present multiple times:\t\t\t\t";
+  std::cout << "Test 37: search on a list of length 10 returns true if the search element is present multiple times:\t\t\t\t";
   try{
     LinkedListOfInts list;
 
@@ -247,7 +246,7 @@ void TestSuite::testSearch(){
 
 void TestSuite::testAddBack(){
 
-  std::cout << "Test 9: addBack() on an empty list produces a list of length 1:\t\t\t\t\t\t\t\t\t";
+  std::cout << "Test 8: addBack() on an empty list produces a list of length 1:\t\t\t\t\t\t\t\t\t";
   try{
     LinkedListOfInts list;
 
@@ -260,7 +259,7 @@ void TestSuite::testAddBack(){
   }
 
 
-  std::cout << "Test 10: addBack() on an empty list produces list with first element == inserted value:\t\t\t\t\t\t";
+  std::cout << "Test 9: addBack() on an empty list produces list with first element == inserted value:\t\t\t\t\t\t";
   try{
     LinkedListOfInts list;
 
@@ -273,7 +272,7 @@ void TestSuite::testAddBack(){
   }
 
 
-  std::cout << "Test 11: addBack() on a list with 1 element produces list of length 2:\t\t\t\t\t\t\t\t";
+  std::cout << "Test 10: addBack() on a list with 1 element produces list of length 2:\t\t\t\t\t\t\t\t";
   try{
     LinkedListOfInts list;
 
@@ -287,7 +286,7 @@ void TestSuite::testAddBack(){
   }
 
 
-  std::cout << "Test 12: addBack() on a list with 1 element produces list with second element == inserted value:\t\t\t\t";
+  std::cout << "Test 11: addBack() on a list with 1 element produces list with second element == inserted value:\t\t\t\t";
   try{
     LinkedListOfInts list;
 
@@ -301,7 +300,7 @@ void TestSuite::testAddBack(){
   }
 
 
-  std::cout << "Test 13: addBack() on a list with many elements (10) produces list with one additional element (11):\t\t\t\t";
+  std::cout << "Test 12: addBack() on a list with many elements (10) produces list with one additional element (11):\t\t\t\t";
   try{
     LinkedListOfInts list;
 
@@ -316,7 +315,7 @@ void TestSuite::testAddBack(){
   }
 
 
-  std::cout << "Test 14: addBack() on a list with many element produces list with last element == inserted value:\t\t\t\t";
+  std::cout << "Test 13: addBack() on a list with many element produces list with last element == inserted value:\t\t\t\t";
   try{
     LinkedListOfInts list;
 
@@ -336,7 +335,7 @@ void TestSuite::testAddBack(){
 
 void TestSuite::testAddFront(){
 
-  std::cout << "Test 15: addFront() on an empty list produces a list of length 1:\t\t\t\t\t\t\t\t";
+  std::cout << "Test 14: addFront() on an empty list produces a list of length 1:\t\t\t\t\t\t\t\t";
   try{
     LinkedListOfInts list;
 
@@ -349,7 +348,7 @@ void TestSuite::testAddFront(){
   }
 
 
-  std::cout << "Test 16: addFront() on an empty list produces list with first element == inserted value:\t\t\t\t\t";
+  std::cout << "Test 15: addFront() on an empty list produces list with first element == inserted value:\t\t\t\t\t";
   try{
     LinkedListOfInts list;
 
@@ -362,7 +361,7 @@ void TestSuite::testAddFront(){
   }
 
 
-  std::cout << "Test 17: addFront() on a list with 1 element produces list of length 2:\t\t\t\t\t\t\t\t";
+  std::cout << "Test 16: addFront() on a list with 1 element produces list of length 2:\t\t\t\t\t\t\t\t";
   try{
     LinkedListOfInts list;
 
@@ -376,7 +375,7 @@ void TestSuite::testAddFront(){
   }
 
 
-  std::cout << "Test 18: addFront() on a list with 1 element produces list with first element == inserted value:\t\t\t\t";
+  std::cout << "Test 17: addFront() on a list with 1 element produces list with first element == inserted value:\t\t\t\t";
   try{
     LinkedListOfInts list;
 
@@ -390,7 +389,7 @@ void TestSuite::testAddFront(){
   }
 
 
-  std::cout << "Test 19: addFront() on a list with many elements (10) produces list with one additional element (11)\t\t\t\t";
+  std::cout << "Test 18: addFront() on a list with many elements (10) produces list with one additional element (11)\t\t\t\t";
   try{
     LinkedListOfInts list;
 
@@ -405,7 +404,7 @@ void TestSuite::testAddFront(){
   }
 
 
-  std::cout << "Test 20: addBack() on a list with many element produces list with first element == inserted value:\t\t\t\t";
+  std::cout << "Test 19: addBack() on a list with many element produces list with first element == inserted value:\t\t\t\t";
   try{
     LinkedListOfInts list;
 
@@ -425,7 +424,7 @@ void TestSuite::testAddFront(){
 
 void TestSuite::testRemoveBack(){
 
-  std::cout << "Test 21: removeBack() on an empty list returns false:\t\t\t\t\t\t\t\t\t\t";
+  std::cout << "Test 20: removeBack() on an empty list returns false:\t\t\t\t\t\t\t\t\t\t";
   try{
     LinkedListOfInts list;
 
@@ -436,7 +435,7 @@ void TestSuite::testRemoveBack(){
   }
 
 
-  std::cout << "Test 22: removeBack() on an empty list does not modify the list:\t\t\t\t\t\t\t\t";
+  std::cout << "Test 21: removeBack() on an empty list does not modify the list:\t\t\t\t\t\t\t\t";
   try{
     LinkedListOfInts list;
 
@@ -449,7 +448,7 @@ void TestSuite::testRemoveBack(){
   }
 
 
-  std::cout << "Test 23: removeBack() on a list with one element returns true:\t\t\t\t\t\t\t\t\t";
+  std::cout << "Test 22: removeBack() on a list with one element returns true:\t\t\t\t\t\t\t\t\t";
   try{
     LinkedListOfInts list;
 
@@ -462,7 +461,7 @@ void TestSuite::testRemoveBack(){
   }
 
 
-  std::cout << "Test 24: removeBack() on a list with one element results in an empty list:\t\t\t\t\t\t\t";
+  std::cout << "Test 23: removeBack() on a list with one element results in an empty list:\t\t\t\t\t\t\t";
   try{
     LinkedListOfInts list;
 
@@ -477,7 +476,7 @@ void TestSuite::testRemoveBack(){
   }
 
 
-  std::cout << "Test 25: removeBack() on a list with many elements (10) returns true:\t\t\t\t\t\t\t\t";
+  std::cout << "Test 24: removeBack() on a list with many elements (10) returns true:\t\t\t\t\t\t\t\t";
   try{
     LinkedListOfInts list;
 
@@ -492,7 +491,7 @@ void TestSuite::testRemoveBack(){
   }
 
 
-  std::cout << "Test 26: removeBack() on a list with many elements (10) results in the same list, missing the last element of the original:\t";
+  std::cout << "Test 25: removeBack() on a list with many elements (10) results in the same list, missing the last element of the original:\t";
   try{
     LinkedListOfInts list;
 
@@ -521,7 +520,7 @@ void TestSuite::testRemoveBack(){
 
 void TestSuite::testRemoveFront(){
 
-  std::cout << "Test 21: removeFront() on an empty list returns false:\t\t\t\t\t\t\t\t\t\t";
+  std::cout << "Test 26: removeFront() on an empty list returns false:\t\t\t\t\t\t\t\t\t\t";
   try{
     LinkedListOfInts list;
 
@@ -532,7 +531,7 @@ void TestSuite::testRemoveFront(){
   }
 
 
-  std::cout << "Test 22: removeFront() on an empty list does not modify the list:\t\t\t\t\t\t\t\t";
+  std::cout << "Test 27: removeFront() on an empty list does not modify the list:\t\t\t\t\t\t\t\t";
   try{
     LinkedListOfInts list;
 
@@ -545,7 +544,7 @@ void TestSuite::testRemoveFront(){
   }
 
 
-  std::cout << "Test 23: removeFront() on a list with one element returns true:\t\t\t\t\t\t\t\t\t";
+  std::cout << "Test 28: removeFront() on a list with one element returns true:\t\t\t\t\t\t\t\t\t";
   try{
     LinkedListOfInts list;
 
@@ -558,7 +557,7 @@ void TestSuite::testRemoveFront(){
   }
 
 
-  std::cout << "Test 24: removeFront() on a list with one element results in an empty list:\t\t\t\t\t\t\t";
+  std::cout << "Test 29: removeFront() on a list with one element results in an empty list:\t\t\t\t\t\t\t";
   try{
     LinkedListOfInts list;
 
@@ -573,7 +572,7 @@ void TestSuite::testRemoveFront(){
   }
 
 
-  std::cout << "Test 25: removeFront() on a list with many elements (10) returns true:\t\t\t\t\t\t\t\t";
+  std::cout << "Test 30: removeFront() on a list with many elements (10) returns true:\t\t\t\t\t\t\t\t";
   try{
     LinkedListOfInts list;
 
@@ -588,7 +587,7 @@ void TestSuite::testRemoveFront(){
   }
 
 
-  std::cout << "Test 26: removeFront() on a list with many elements (10) results in the same list, missing the first element of the original:\t";
+  std::cout << "Test 31: removeFront() on a list with many elements (10) results in the same list, missing the first element of the original:\t";
   try{
     LinkedListOfInts list;
 
