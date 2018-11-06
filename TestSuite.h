@@ -1,3 +1,5 @@
+#include <stdexcept>
+
 class TestSuite {
 
 public:
@@ -15,17 +17,20 @@ public:
 
   // 1. test if a newly created list is empty
   // 2. test if a list with one item added to it is empty
-  // 3. test if a list with a number of additions is not empty [use n=10]
+  // 3. test if a list with many elements in it is not empty [use n=10]
   void testIsEmpty();
 
-  // 1. test that the size method returns 0 for a newly created list
-  // 2. test that the size method returns 1 for a list with a single addition
-  // 3. test that the size method returns n for a list with n additions [use n=10]
-  // 4. test that the size method returns n-m for a list with n additions and m removals in an arbitrary order (where a removal is not done on an empty list) [use AAAARRARAARRRAAAR]
+  // 1. test that the size method returns 0 for an empty list
+  // 2. test that the size method returns 1 for a list with a single element
+  // 3. test that the size method returns n for a list with n elements [use n=10]
   void testSize();
 
-  // 1. test that searching for an arbitrary element in an empty list returns false
-  // 2. test that searching for an
+  // 1. test that searching in an empty list returns false
+  // 2. test that searching in a list of length 1 returns false if the search value is not present
+  // 3. test that searching in a list of length 1 returns true if the search value is present
+  // 4. test that searching in a list of length n [use n=10] returns false if the search value is not present
+  // 5. test that searching in a list of length n [use n=10] returns true if the search value is present
+  // 6. test that searching in a list of length n [use n=10] returns true if the search value is present multiple times
   void testSearch();
 
   // 1. test that addBack(x) on an empty list contains a single element of value x
@@ -47,5 +52,13 @@ public:
   // 2. test that removeFront() on a list with one element returns true and produces an empty list
   // 3. test that removeFront() on a list with an arbitrary n elements returns true and produces the same list without the first element [use n=10]
   void testRemoveFront();
+
+private:
+
+  // prints out "PASSED" or "FAILED" based on input condition
+  void test(bool condition);
+
+  // prints out the exception encountered during a test
+  void testExcept(std::exception e);
 
 };
