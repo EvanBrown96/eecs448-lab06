@@ -43,6 +43,7 @@ void TestSuite::allTests(){
   testRemoveBack();
   testRemoveFront();
   testSearch();
+  testRandom();
 
   std::cout << "Test Suite Complete.";
 }
@@ -611,7 +612,7 @@ void TestSuite::testRemoveFront(){
 }
 
 
-void TestSuite::TestRandom(){
+void TestSuite::testRandom(){
 
   std::cout << "Running RANDOM test.\n";
   std::vector<int> sim;
