@@ -17,3 +17,7 @@ int main(int argc, char** argv)
 	return (0);
 
 }
+
+void operator delete(Node<int>* n){
+	std::cout << "removed node";
+}
