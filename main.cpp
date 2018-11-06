@@ -18,6 +18,7 @@ int main(int argc, char** argv)
 
 }
 
-void operator delete(Node<int>* n){
-	std::cout << "removed node";
+void operator delete(void* n){
+	std::cout << typeid(n).name();
+	free(n);
 }
