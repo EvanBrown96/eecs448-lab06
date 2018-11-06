@@ -1,3 +1,4 @@
+#include "LinkedListOfInts.h"
 #include <stdexcept>
 
 class TestSuite {
