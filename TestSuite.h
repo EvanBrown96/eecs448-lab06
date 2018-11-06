@@ -53,7 +53,7 @@ public:
   // 3. test that removeFront() on a list with an arbitrary n elements returns true and produces the same list without the first element [use n=10]
   void testRemoveFront();
 
-  // does 100 random operations to a linked list while simulating on a vector.
+  // does 50 random operations to a linked list while simulating on a vector.
   // checks the contents, size, and isEmpty of the list after each operation and verifies its correctness.
   void testRandom();
 

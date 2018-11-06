@@ -622,7 +622,7 @@ void TestSuite::testRandom(){
   std::vector<int> contents;
   bool error = false;
 
-  for(int i = 0; i < 100; i++){
+  for(int i = 0; i < 50; i++){
     std::cout << "Operation: ";
     int val = rand() % 1000;
     int op = rand() % 4;
@@ -650,24 +650,24 @@ void TestSuite::testRandom(){
     }
 
     contents = list.toVector();
-    std::cout << "expected: ";
+    std::cout << "\texpected: ";
     printVector(sim);
-    std::cout << "\nactual: ";
+    std::cout << "\n\tactual: ";
     printVector(contents);
     std::cout << "\n";
 
     error = false;
 
     if(list.size() != (int)contents.size()){
-      std::cout << "FAILED: size method gave wrong value (" + std::to_string(list.size()) + ", expected " + std::to_string(contents.size()) + ")\n";
+      std::cout << "\tFAILED: size method gave wrong value (" + std::to_string(list.size()) + ", expected " + std::to_string(contents.size()) + ")\n";
       error = true;
     }
     if(contents.size() != sim.size()){
-      std::cout << "FAILED: list incorrect length (" + std::to_string(contents.size()) + ", expected " + std::to_string(sim.size()) + ")\n";
+      std::cout << "\tFAILED: list incorrect length (" + std::to_string(contents.size()) + ", expected " + std::to_string(sim.size()) + ")\n";
       error = true;
     }
     if(contents.empty() != list.isEmpty()){
-      std::cout << "FAILED: list incorrectly reported empty status\n";
+      std::cout << "\tFAILED: list incorrectly reported empty status\n";
       error = true;
     }
 
