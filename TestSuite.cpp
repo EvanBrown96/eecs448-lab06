@@ -50,11 +50,11 @@ void TestSuite::allTests(){
   testRemoveBack();
   testRemoveFront();
   testSearch();
-  testRandom();
+  // testRandom();
 
   std::cout << "Test Suite Complete.\n";
-  // std::cout << "Test Battery: " + std::to_string(battery_passes) + "/32 PASSED\n";
-  // std::cout << "Test RANDOM: " + std::to_string(random_passes) + "/200 PASSED\n";
+  std::cout << "Test Battery: " + std::to_string(battery_passes) + "/32 PASSED\n";
+  std::cout << "Test RANDOM: " + std::to_string(random_passes) + "/200 PASSED\n";
 }
 
 
