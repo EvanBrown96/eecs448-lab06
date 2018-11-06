@@ -74,7 +74,7 @@ void TestSuite::testIsEmpty(){
   try{
     LinkedListOfInts list;
 
-    test(LinkedList.isEmpty());
+    test(list.isEmpty());
   }
   catch(std::exception e){
     testExcept(e);
@@ -86,7 +86,7 @@ void TestSuite::testIsEmpty(){
     LinkedListOfInts list;
     list.addFront(5);
 
-    test(!LinkedList.isEmpty());
+    test(!list.isEmpty());
   }
   catch(std::exception e){
     testExcept(e);
@@ -101,7 +101,7 @@ void TestSuite::testIsEmpty(){
       list.addFront(i);
     }
 
-    test(!LinkedList.isEmpty());
+    test(!list.isEmpty());
   }
   catch(std::exception e){
     testExcept(e);
@@ -130,7 +130,7 @@ void TestSuite::testSize(){
 
     list.addFront(2);
 
-    test(LinkedList.size() == 1);
+    test(list.size() == 1);
   }
   catch(std::exception e){
     testExcept(e);
@@ -145,7 +145,7 @@ void TestSuite::testSize(){
       list.addFront(i);
     }
 
-    test(LinkedList.size() == 10);
+    test(list.size() == 10);
   }
   catch(std::exception e){
     testExcept(e);
